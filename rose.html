@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/ress.css">
+  <link rel="stylesheet" href="css/rose.css">
+  <link rel="icon" href="image/rose_icon.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>花</title>
+  <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="#main"> FA EXHIBITION</a>
+    <span class="material-icons menu-btn">menu</span>
+  </header>
+  <!-- ハンバーガーメニュー -->
+  <nav class="menu">
+    <span class="material-icons menu-btn">close</span>
+    <ul>
+      <li class="menu__item"><a href="#main">TOP</a></li>
+      <li class="menu__item"><a href="#information">INFORMATION</a></a></li>
+      <li class="menu__item"><a href="#gallery">GALLERY</a></li>
+      <li class="menu__item"><a href="#access">ACCESS</a></li>
+      <li class="menu__item"><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <figure>
+      <img src="image/rose_main1.jpg" alt="青いバラの画像">
+      <img src="image/rose_main2.jpg" alt="カラフルなバラの画像">
+      <img src="image/rose_main3.jpg" alt="オレンジのバラの画像">
+    </figure>
+    <section class="information" id="information">
+      <h1>Hello Flower!<br>FA EXHIBITION<br>2021</h1>
+      <h2>INFORMATION</h2>
+      <p>2021 JUL1(THU)-3(SAT)<br>DAY1 10am-6pm OTHER 10am-5:30pc</p>
+      <h3>at PARK SIDE HALL</h3>
+      <p>2021年7月1日(木)-3日(土)<br>Day1 10時～18時 その他 10時～17時30分</p>
+      <h2>GALLERY</h2>
+    </section>
+    <section class="gallery" id="gallery">
+      <img src="image/rose1.jpg" alt="ピンクのバラの画像" width="100%" height="433px">
+      <img src="image/rose2.jpg" alt="蕾のの画像" width="100%" height="209px">
+      <img src="image/rose3.jpg" alt="白い花の画像" width="100%" height="315px">
+      <img src="image/rose4.jpg" alt="ピンクの花の画像" width="100%" height="473px">
+      <img src="image/rose5.jpg" alt="紫の花の画像" width="100%" height="394px">
+      <img src="image/rose6.jpg" alt="青い花の画像" width="100%" height="209px">
+    </section>
+    <section class="access" id="access">
+      <h2>ACCESS</h2>
+      <h3>PARK SIDE HALL</h3>
+      <p>〒152-0035 東京都目黒区自由が丘1-1-1 PARK SIDE HALL<br>ARK SIDE HALL. 1-1-1- jiyuugaoka. Meguro-ku. Tokyo</p>
+      <p>Tel: 03-1111-1111<br>E-mail: info@xxxxxxx.jp</p>
+      <a href="#">GOOGLE MAP</a>
+    </section>
+    <section class="contact" id="contact">
+      <h2>CONTACT</h2>
+      <a href="#">出展に関するお問い合わせ</a>
+      <a href="#">その他のお問い合わせ</a>
+    </section>
+  </main>
+  <footer>
+    <section class="content">
+      <p>FA EXHIBITION</p>
+      <p>〒152-0035 東京都目黒区自由が丘1-1-1 PARK SIDE HALL</p>
+      <p>Tel: 03-1111-1111<br>E-mail: info@xxxxxxx.jp</p>
+      <section class="sns">
+        <a href="#">Twitter</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </section>
+    </section>
+    <section class="copy">
+      <p>PRIVACY PLICY</p>
+      <small>&copy; FA EXHIBITION</small>
+    </section>
+  </footer>
+  <script>
+    var headNav = $("header");
+    $(window).on("load scroll", function () {
+      if ($(this).scrollTop() > 400 && headNav.hasClass("is-fixed") == false) {
+        headNav.css("display", "block");
+        headNav.css({ "top": "-72px" });
+        headNav.addClass("is-fixed");
+        headNav.animate({ "top": 0 }, 600);
+      }
+      else if ($(this).scrollTop() < 200 && headNav.hasClass("is-fixed") == true) {
+        headNav.removeClass("is-fixed");
+        headNav.css("display", "none");
+      }
+    });
+    $('a[href^="#"]').click(function () {
+      var adjust = 0;
+      var speed = 400;
+      var href = $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top + adjust;
+      $('body,html').animate({ scrollTop: position }, speed, 'swing');
+      return false;
+    });
+    $('.menu-btn').on('click', function () {
+      $('.menu').toggleClass('is-active');
+      $('.menu a').on('click', function () {
+        $('.menu').removeClass('is-active');
+      });
+    });
+  </script>
+</body>
+
+</html>

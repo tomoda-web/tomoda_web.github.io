@@ -1,0 +1,258 @@
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  padding: 0 16px;
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+}
+
+header h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px 0 19px;
+}
+
+header span {
+  margin: 33px 0 26px;
+}
+
+header .material-icons {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+header .material-icons:hover{
+  opacity: .6;
+}
+
+/* ハンバーガーアイコン */
+
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  width: 100%;
+  height: 100%;
+  align-items: right;
+  background-color: #555;
+  transform: translateX(100vw);
+  transition: all .3s linear;
+  padding: 20px;
+}
+
+.menu.is-active {
+  transform: translateX(0);
+}
+
+
+.menu a {
+  color: white;
+  font-size: 20px;
+}
+.menu a:hover{
+  opacity: .6;
+}
+
+.menu .menu_list{
+  margin-bottom: 30px;
+}
+
+.menu .menu_list li {
+  border-top: 1px solid white;
+  margin-bottom: 10px;
+  width: 90%;
+  padding: 30px 0;
+}
+
+.menu .menu_list:first-child {
+  margin-top:10px;
+}
+
+.menu .menu_list li:last-child {
+  border-bottom: 1px solid white;
+  
+}
+
+.menu .sns li{
+  margin-bottom: 10px;
+}
+
+.menu .material-icons {
+  position :absolute;
+  top: 0;
+  right: 10px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+/* figure */
+
+figure {
+  width: 100%;
+  height: 679px;
+  margin-bottom: 81px;
+}
+
+figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* pickup */
+.pickup {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.pickup h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.pickup img {
+  object-fit: cover;
+}
+
+/* feature */
+
+.feature {
+  padding: 0 16px;
+}
+
+.feature h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.feature section > section {
+  box-shadow: 0 10px 20px 0 gray;
+  margin-bottom: 26px;
+  padding: 16px;
+}
+
+.feature section h3 {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.feature section p {
+  font-size: 14.4px;
+
+}
+
+.feature section p + p {
+  margin-top: 27px;
+  font-size: 12px;
+  text-align: right;
+}
+
+/* footer */
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 80px 16px 10px 16px;
+}
+
+footer h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+footer p {
+  font-size: 14.4px;
+  margin-bottom: 30px;
+}
+
+footer  .content section {
+  text-align: left;
+}
+
+footer a {
+  font-size: 14.4px;
+  display: block;
+  text-align:center;
+  width: 100%;
+  border: 1px solid white;
+  padding: 12px 0;
+  margin-bottom: 90px;
+}
+
+footer > p {
+  text-align: center;
+}
+
+
+footer a:hover {
+  opacity: 0.6;
+}
+
+/* formデザイン */
+
+input {
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 44px;
+  margin-bottom: 20px;
+}
+
+textarea {
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 68px;
+  margin-bottom: 20px;
+}
+
+
+/* iPad設定 */
+@media screen and (min-width:768px) {
+  .feature {
+    margin-bottom: 20px;
+  }
+  .feature .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .feature section > section {
+    margin-bottom: 0;
+  }
+   footer .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap : 30px;
+  }
+
+  footer h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  footer a {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width:1280px){
+  .feature .content {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 1280px;
+    margin: 0 auto;
+  }
+  footer .content {
+    width: 1280px;
+    margin: 0 auto;
+  }
+}
